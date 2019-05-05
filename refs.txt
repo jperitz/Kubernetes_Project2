@@ -1,0 +1,8 @@
+References:
+
+https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
+https://medium.com/bitcraft/dockerizing-a-python-3-flask-app-line-by-line-400aef1ded3a
+https://runnable.com/docker/python/dockerize-your-flask-application
+Report:
+
+So I created a Ubuntu 18.04 VM to run Docker, since Windows 10 Home edition doesn't support it.
