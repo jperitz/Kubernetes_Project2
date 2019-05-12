@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Markup, render_template, request
 from typing import List, Dict
 import mysql.connector
 import json
@@ -22,8 +22,35 @@ def fav_colors() -> List[Dict]:
 
     return results
 
-@app.route('/')
-def index() -> str:
+add_entry = ("INSERT INTO fav_colors "
+            "(name, color) "
+            "VALUES (%s, %s)")
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == "POST":
+        details = request.form
+        name = details['name']
+        color = details['color']
+        data_entry = (name, color)
+        cnx = mysql.connector.connect(user='root', password='root', host='db', port='3306', database='colors')
+        cursor = cnx.cursor()
+        cursor.execute(add_entry, data_entry)
+        cnx.commit()
+        cursor.close()
+        cnx.close()
+        return 'Success!'
+    return render_template('index.html')
+
+@app.route('/chart')
+def chart():
+    labels = ["January","February","March","April","May","June","July","August"]
+    values = [10,9,8,7,6,4,7,8]
+    colors = [ "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA","#ABCDEF", "#DDDDDD", "#ABCABC"  ]
+    return render_template('chart.html', set=zip(values, labels, colors))
+
+@app.route('/api/data')
+def colors() -> str:
     return json.dumps({'fav_colors': fav_colors()})
 
 if __name__ == '__main__':
