@@ -6,6 +6,7 @@ https://medium.com/bitcraft/dockerizing-a-python-3-flask-app-line-by-line-400aef
 http://jinja.pocoo.org/docs/2.10/templates/
 https://runnable.com/docker/python/dockerize-your-flask-application
 https://medium.com/@naoko.reeves/how-to-install-minikube-on-ubuntu-bionic-18-04-af2d5435cc35
+https://kubernetes.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/
 https://medium.com/@shamir.stav_83310/dockerizing-a-flask-mysql-app-with-docker-compose-c4f51d20b40d
 Report:
 

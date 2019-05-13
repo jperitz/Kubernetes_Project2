@@ -1,11 +1,14 @@
 version: "2"
 services:
   app:
-    build: ./app
+   # build: ./app
+    image: jperitz/favorite-colors:latest
     links:
       - db
     ports:
       - "5000:5000"
+    labels:
+      kompose.service.type: nodeport
 
   db:
     image: mysql:5.7

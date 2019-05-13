@@ -54,5 +54,6 @@ def colors() -> str:
     return json.dumps({'fav_colors': fav_colors()})
 
 if __name__ == '__main__':
+    app.debug = True
     app.run(host='0.0.0.0')
 
