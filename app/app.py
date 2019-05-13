@@ -9,8 +9,8 @@ def fav_colors() -> List[Dict]:
     config = {
         'user': 'root',
         'password': 'root',
-        #'host': 'db',
-        'host': '172.17.0.3',
+        'host': 'db',
+        #'host': '172.17.0.3',
         'port': '3306',
         'database': 'colors'
     }
@@ -34,7 +34,7 @@ def index():
         name = details['name']
         color = details['color']
         data_entry = (name, color)
-        cnx = mysql.connector.connect(user='root', password='root', host='172.17.0.3', port='3306', database='colors')
+        cnx = mysql.connector.connect(user='root', password='root', host='db', port='3306', database='colors')
         cursor = cnx.cursor()
         cursor.execute(add_entry, data_entry)
         cnx.commit()
