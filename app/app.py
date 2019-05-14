@@ -9,7 +9,6 @@ def fav_colors() -> List[Dict]:
     config = {
         'user': 'root',
         'password': 'root',
-        #'host': 'db',
         'host': '172.17.0.3',
         'port': '3306',
         'database': 'colors'
@@ -34,8 +33,6 @@ def index():
         name = details['name']
         color = details['color']
         data_entry = (name, color)
-        #cnx = mysql.connector.connect(user='root', password='root', host='172.17.0.2', port='3306', database='colors')
-        #cnx.close()
         cnx = mysql.connector.connect(user='root', password='root', host='172.17.0.3', port='3306', database='colors')
         cursor = cnx.cursor()
         cursor.execute(add_entry, data_entry)
@@ -44,13 +41,6 @@ def index():
         cnx.close()
         return 'Success!'
     return render_template('index.html')
-
-@app.route('/chart')
-def chart():
-    labels = ["January","February","March","April","May","June","July","August"]
-    values = [10,9,8,7,6,4,7,8]
-    colors = [ "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA","#ABCDEF", "#DDDDDD", "#ABCABC"  ]
-    return render_template('chart.html', set=zip(values, labels, colors))
 
 @app.route('/api/data')
 def colors() -> str:
