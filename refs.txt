@@ -1,4 +1,4 @@
-References:
+References/useful links:
 https://dev.mysql.com/doc/connector-python/en/connector-python-example-cursor-transaction.html
 https://www.codementor.io/adityamalviya/python-flask-mysql-connection-rxblpje73
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
@@ -9,6 +9,3 @@ https://runnable.com/docker/python/dockerize-your-flask-application
 https://medium.com/@naoko.reeves/how-to-install-minikube-on-ubuntu-bionic-18-04-af2d5435cc35
 https://kubernetes.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/
 https://medium.com/@shamir.stav_83310/dockerizing-a-flask-mysql-app-with-docker-compose-c4f51d20b40d
-Report:
-
-So I created a Ubuntu 18.04 VM to run Docker, since Windows 10 Home edition doesn't support it.
