@@ -34,6 +34,8 @@ def index():
         name = details['name']
         color = details['color']
         data_entry = (name, color)
+        #cnx = mysql.connector.connect(user='root', password='root', host='172.17.0.2', port='3306', database='colors')
+        #cnx.close()
         cnx = mysql.connector.connect(user='root', password='root', host='172.17.0.3', port='3306', database='colors')
         cursor = cnx.cursor()
         cursor.execute(add_entry, data_entry)
@@ -56,5 +58,5 @@ def colors() -> str:
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='0.0.0.0')
+    app.run(host='172.17.0.2')
 
