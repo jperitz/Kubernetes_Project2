@@ -1,4 +1,4 @@
-from flask import Flask, Markup, render_template, request
+from flask import Flask, render_template, request, Markup
 from typing import List, Dict
 import mysql.connector
 import json

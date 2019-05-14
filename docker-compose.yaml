@@ -2,7 +2,7 @@ version: "2"
 services:
   app:
    # build: ./app
-    image: jperitz/favorite-colors:latest
+    image: jperitz/colors-2:latest
     links:
       - db
     ports:
